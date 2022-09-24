@@ -18,6 +18,7 @@ body {
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 html *::-webkit-scrollbar {
@@ -50,6 +51,71 @@ html *::-webkit-scrollbar-track {
 .main {
     overflow: hidden;
     position: relative;
+}
+
+.main.dark {
+    background-color: #51708b;
+
+}
+
+/* toggleTheme */
+.toggleTheme {
+    width: 1200px;
+    margin: 102px auto 0 auto;
+    display: flex;
+    justify-content: end;
+}
+
+.toggleTheme span {
+    font-size: 16px;
+}
+
+.lightTheme {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-primary);
+    padding: 4px 22px;
+    border-radius: 8px;
+    color: var(--color-primary);
+    background-color: #fff;
+}
+
+.darkTheme:hover,
+.lightTheme:hover {
+    transform: translateY(-2px);
+    transition: all linear .3s;
+    opacity: .8;
+    cursor: pointer;
+}
+
+
+
+.lightTheme span {}
+
+.lightTheme svg {
+    width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    fill: var(--color-primary);
+}
+
+
+
+.darkTheme {
+    display: none;
+    align-items: center;
+    border: 1px solid #0E1E32;
+    padding: 4px 22px;
+    border-radius: 8px;
+    background-color: #0E1E32;
+    color: #fff;
+}
+
+.darkTheme svg {
+    width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    fill: yellow;
 }
 
 /* header */
@@ -115,7 +181,6 @@ header {
 
 /* trending */
 .trending {
-    padding-top: 80px;
     margin-top: 64px;
 }
 
@@ -294,6 +359,7 @@ header {
 
 .article__item {
     margin-top: 28px;
+    animation: items ease-in .6s;
 }
 
 .article__item a {
@@ -695,6 +761,41 @@ footer {
         transform: translateY(0);
 
         opacity: 1;
+    }
+}
+
+.goToTop {
+    position: fixed;
+    right: 2%;
+    top: 80%;
+    background-color: #ff7a18;
+    color: black;
+    width: 46px;
+    height: 46px;
+    border-radius: 100%;
+    z-index: 100;
+    transition: all .2s ease;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    animation: goToTop .6s ease;
+}
+
+.goToTop:hover {
+    transform: translateY(-2px);
+    color: aliceblue;
+}
+
+@keyframes goToTop {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .8;
     }
 }
 

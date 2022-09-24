@@ -83,3 +83,43 @@ viewMore.onclick = () => {
   more += 3;
   render(more);
 };
+
+// GOtoTop
+
+const goToTop = document.querySelector(".goToTop");
+
+const handleScrooll = () => {
+  if (window.scrollY >= 580) {
+    goToTop.style.display = "flex";
+  } else {
+    goToTop.style.display = "none";
+  }
+};
+
+goToTop.onclick = () => {
+  window.location.href = "#";
+};
+
+window.addEventListener("scroll", handleScrooll);
+
+// end GotoTop
+
+// toggle Theme
+
+const lightTheme = document.querySelector(".lightTheme");
+const darkTheme = document.querySelector(".darkTheme");
+
+lightTheme.onclick = function () {
+  this.style.display = "none";
+  darkTheme.style.display = "flex";
+  document.querySelector(".main").classList.add("dark");
+  document.querySelector(".header").style.backgroundColor = "#51708b";
+  document.querySelector("header").style.backgroundColor = "#51708b";
+};
+darkTheme.onclick = function () {
+  this.style.display = "none";
+  lightTheme.style.display = "flex";
+  document.querySelector(".main").classList.remove("dark");
+  document.querySelector(".header").style.backgroundColor = "#fff";
+  document.querySelector("header").style.backgroundColor = "#fff";
+};

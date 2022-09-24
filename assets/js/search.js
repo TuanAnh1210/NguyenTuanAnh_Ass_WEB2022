@@ -1,11 +1,17 @@
 // show hide search
 const searchIpt = document.querySelector(".searchIpt");
-
+const searchMobile = document.querySelector(".search--mobile");
 const modal = document.querySelector(".modal");
 const modalContainer = document.querySelector(".modal__container");
 const modalClose = document.querySelector(".modal__form-close");
 
 searchIpt.onclick = () => {
+  modal.classList.add("open");
+  searchInput.focus();
+  document.querySelector("body").style.overflow = "hidden";
+  //   goToTop.style.display = "none";
+};
+searchMobile.onclick = () => {
   modal.classList.add("open");
   searchInput.focus();
   document.querySelector("body").style.overflow = "hidden";
