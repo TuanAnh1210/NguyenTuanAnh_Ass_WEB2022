@@ -43,8 +43,8 @@
 
     .article__item {
         width: 90%;
+        margin: 16px auto;
 
-        margin: 20px auto;
     }
 
     .trending__sub--author {
@@ -55,6 +55,21 @@
     .trending__sub--author p {
         margin-right: 0;
         font-size: 14px;
+    }
+
+    .suggest__card {
+        padding: 0 16px;
+        margin: 32px 0;
+    }
+
+    .editor {
+        padding-left: 16px;
+    }
+
+    footer {
+        text-align: center;
+        height: auto;
+        padding: 0 16px;
     }
 }
 
@@ -99,6 +114,18 @@
         color: #fff;
         transition: all linear .3s;
         cursor: pointer;
+    }
+
+    .footer__text {
+        padding-right: 0;
+    }
+
+    .pd {
+        padding-top: 38px;
+    }
+
+    .pd:last-child {
+        padding: 38px 0 40px 0;
     }
 }
 

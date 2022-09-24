@@ -8,9 +8,32 @@
     align-items: center;
 }
 
+body {
+    overflow-y: overlay;
+}
+
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .15);
+}
+
+
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
 
 :root {
     --color-primary: #C31815;
@@ -20,6 +43,7 @@ html {
 
 
 .main {
+    overflow: hidden;
     position: relative;
 }
 
@@ -353,9 +377,103 @@ header {
     color: var(--color-primary);
 }
 
+/* suggest__card */
 
+.suggest {
+    margin-bottom: 64px;
+}
 
+.suggest__card {
+    display: flex;
+}
 
+.suggest__card--word {}
+
+.suggest__card--word h3 {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    font-style: italic;
+    line-height: 24px;
+    max-width: 304px;
+    max-height: 72px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: wrap;
+}
+
+.suggest__card--word p {
+    margin-top: 12px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+}
+
+.suggest__card--img {
+    height: 100%;
+}
+
+.suggest__card--img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.editor {
+    margin-bottom: 32px;
+}
+
+footer {
+    background-color: #0E1E32;
+    height: 240px;
+    display: flex;
+    align-items: center;
+}
+
+.footer__logo p {
+    margin-top: 38px;
+    color: #ccc;
+}
+
+.footer__text {
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    color: #fff;
+    padding-right: 138px;
+}
+
+.footer__nav a {
+    text-decoration: none;
+    color: #fff;
+    padding-right: 8px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer__icon {
+    margin-top: 28px;
+}
+
+.footer__icon a {
+    text-decoration: none;
+    color: #fff;
+    padding-right: 8px;
+    margin-right: 24px;
+    font-size: 28px;
+}
+
+.footer__center {
+    display: inline-block;
+    text-align: center;
+}
+
+.pd {
+    /* padding: 68px 0; */
+}
+
+.al {
+    align-items: center;
+}
 
 
 /* modal */
