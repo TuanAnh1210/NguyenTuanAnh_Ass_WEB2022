@@ -1,0 +1,112 @@
+/* mobile */
+@media (max-width: 739px) {
+    .header {
+        display: flex;
+    }
+
+    header {
+        display: none;
+    }
+
+    .trending {
+        padding: 72px 16px 0 16px;
+    }
+
+    .breakNews {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 6px;
+    }
+
+    .breakNews button {
+        margin-top: 4px;
+        padding: 4px 6px;
+        font-size: 14px;
+    }
+
+    .breakNews h4 {
+        font-size: 14px;
+        letter-spacing: 0;
+        margin-top: 8px;
+    }
+
+    .article__header {
+        flex-direction: column-reverse;
+    }
+
+    .article__header--create {
+        margin-top: 40px;
+        margin-bottom: 32px;
+    }
+
+    .article__item {
+        width: 90%;
+
+        margin: 20px auto;
+    }
+
+    .trending__sub--author {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .trending__sub--author p {
+        margin-right: 0;
+        font-size: 14px;
+    }
+}
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .header__nav--item {
+        margin: 0 0 0 12px;
+        padding: 0 4px;
+
+    }
+
+    .header__nav--link {
+        font-size: 14px;
+    }
+
+    .header__actions {
+        margin-right: 16px;
+    }
+
+    .header__actions p {
+        padding-left: 0;
+    }
+}
+
+/* mobile and tablet */
+@media (max-width: 1023px) {
+    .trending__img {
+        margin-bottom: 20px;
+    }
+
+    .article__author {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article__author span {
+        margin-top: 10px;
+    }
+
+    .view-more:active {
+        background-color: var(--color-primary);
+        color: #fff;
+        transition: all linear .3s;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 1023px) {
+    .view-more:hover {
+        background-color: var(--color-primary);
+        color: #fff;
+        transition: all linear .3s;
+        cursor: pointer;
+    }
+}
