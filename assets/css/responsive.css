@@ -71,6 +71,16 @@
         height: auto;
         padding: 0 16px;
     }
+
+    .modal__link h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .modal__link p {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 /* tablet */
