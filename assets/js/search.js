@@ -4,7 +4,7 @@ const searchMobile = document.querySelector(".search--mobile");
 const modal = document.querySelector(".modal");
 const modalContainer = document.querySelector(".modal__container");
 const modalClose = document.querySelector(".modal__form-close");
-const goToTop = document.querySelector(".goToTop");
+// const goToTop = document.querySelector(".goToTop");
 searchIpt.onclick = () => {
   modal.classList.add("open");
   searchInput.focus();
