@@ -1,0 +1,172 @@
+.modal__article-wrapper {
+    display: none;
+    align-items: center;
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    animation: ani ease-in-out .4s;
+}
+
+.modal__article-wrapper.open {
+    display: flex;
+}
+
+.modal__article {
+    width: 800px;
+    height: 566px;
+    border-radius: 8px;
+    border: 1px solid #111;
+    background-color: #fff;
+}
+
+.modal__article--form {
+    padding: 18px;
+}
+
+.modal__article--form h3 {
+    margin-bottom: 22px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text {
+    padding: 8px 6px;
+    margin: 4px 0 14px 0;
+}
+
+.btn__article {
+    display: flex;
+    justify-content: end;
+    margin-top: 12px;
+}
+
+.btn__article-close {
+    padding: 8px 38px 8px 38px;
+    margin-right: 18px;
+    border: 1px solid #111;
+    background-color: #fff;
+}
+
+.btn__article-close:hover {
+    background-color: orangered;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn__article-add {
+    padding: 8px 38px 8px 38px;
+    border: none;
+    color: #fff;
+    border: 1px solid #111;
+    background-color: #111;
+}
+
+.btn__article-add:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.article__loadmore {
+    display: flex;
+    justify-content: center;
+}
+
+.article__loadmore button {
+
+    border-radius: 4px;
+    border: none;
+    background-color: #111;
+    color: #fff;
+    margin: 38px 0 72px 0;
+}
+
+.article__loadmore button:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+/* errror */
+.form__group-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__group-header.red {
+    color: red;
+}
+
+.form__group.red {
+    color: red;
+}
+
+.form__group.red .errror {
+    display: inline-block;
+
+}
+
+.errror {
+    display: none;
+}
+
+.form__group input {
+    outline: none;
+}
+
+.form__group textarea {
+    outline: none;
+}
+
+.form__group.red input {
+    border: 1px solid red;
+}
+
+.form__group.red textarea {
+    border: 1px solid red;
+}
+
+.aniShow {
+    animation: ani linear .6s;
+    transition: all linear .6s;
+}
+
+.article__loadmore-btn a {
+    display: block;
+    font-size: 18px;
+    padding: 12px 58px;
+    color: #fff;
+}
+
+.article__remove-btn {
+    font-size: 18px;
+    padding: 12px 58px;
+    color: #fff;
+    margin-left: 20px !important;
+    display: none;
+}
+
+.btn__article-update,
+.btn__article-dlt {
+    float: right;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #111;
+    color: #fff;
+    margin-right: 16px;
+    border-radius: 8px;
+}
+
+.btn__article-update:hover,
+.btn__article-dlt:hover {
+    cursor: pointer;
+    color: orangered;
+}

@@ -9,18 +9,81 @@ header__smMenu.onclick = () => {
 
 // render article
 
+let itemsArticle = JSON.parse(localStorage.getItem("article__storage"))
+  ? JSON.parse(localStorage.getItem("article__storage"))
+  : data;
+
 const list__render = document.querySelector(".list__render");
 
-let more = 3;
+let countArticle = 3;
 window.onload = function () {
-  render(more);
+  render(countArticle);
 };
-function render(more) {
-  if (more > data.length) {
-    alert("Đã load hết thông tin");
+
+// function render
+function render(countArticle) {
+  let articleRender = JSON.parse(localStorage.getItem("article__storage"))
+    ? JSON.parse(localStorage.getItem("article__storage"))
+    : itemsArticle;
+
+  if (countArticle <= articleRender.length) {
+    let articleMain = articleRender.slice(0, countArticle);
+    list__render.innerHTML = articleMain
+      .map(
+        (item) => ` 
+
+  <div class="col l-4 m-6 c-12">
+    <div class="article__item">
+      <a href="#">
+        <div class="article__item--img">
+          <img src="${item.image}" alt="" />
+        </div>
+        <div class="article__card">
+          <div class="article__text">
+            <h3>
+              ${item.title}
+            </h3>
+            <div class="article__word">
+              <p>
+                ${item.description}
+              </p>
+            </div>
+          </div>
+          <div class="article__author">
+            <span>${item.hours ? item.hours : "1 minutes ago"}</span>
+            <span>${item.composer}</span>
+          </div>
+        </div>
+      </a>
+      <div class="article__actions">
+        <div>
+          <span>
+            <i class="ti-heart"></i>
+          </span>
+          <span> 28 </span>
+        </div>
+        <div>
+          <span>
+            <i class="ti-upload"></i>
+          </span>
+          <span> 28 </span>
+        </div>
+        <div>
+          <span>
+            <i class="ti-bookmark"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+`
+      )
+      .join("");
   } else {
-    let dataOutput = data.slice(0, more);
-    list__render.innerHTML = dataOutput
+    let articleMain = articleRender.slice(0, articleRender.length);
+
+    list__render.innerHTML = articleMain
       .map(
         (item) => ` 
   
@@ -37,13 +100,13 @@ function render(more) {
               </h3>
               <div class="article__word">
                 <p>
-                  ${item.desc}
+                  ${item.description}
                 </p>
               </div>
             </div>
             <div class="article__author">
-              <span>${item.hours}</span>
-              <span>${item.author}</span>
+              <span>${item.hours ? item.hours : "1 minutes ago"}</span>
+              <span>${item.composer}</span>
             </div>
           </div>
         </a>
@@ -75,13 +138,154 @@ function render(more) {
   }
 }
 
-// view-more
+const createArticle = document.querySelector(".createArticle");
+const modal__articleWrapper = document.querySelector(".modal__article-wrapper");
+const btn__articleClose = document.querySelector(".btn__article-close");
+createArticle.onclick = () => {
+  modal__articleWrapper.classList.add("open");
+  document.querySelector("body").style.overflow = "hidden";
+  goToTop.style.display = "none";
+};
 
-const viewMore = document.querySelector(".view-more");
+btn__articleClose.onclick = () => {
+  modal__articleWrapper.classList.remove("open");
+  document.querySelector("body").style.overflow = "";
+};
 
-viewMore.onclick = () => {
-  more += 3;
-  render(more);
+document.querySelector(".modal__article").onclick = (e) => {
+  e.stopPropagation();
+};
+
+modal__articleWrapper.onclick = () => {
+  modal__articleWrapper.classList.remove("open");
+  document.querySelector("body").style.overflow = "";
+};
+
+// create new article
+
+// get form submit
+
+const btnArticleAdd = document.querySelector(".btn__article-add");
+const input__title = document.querySelector("#title");
+const input__img = document.querySelector("#image");
+const input__composer = document.querySelector("#composer");
+const input__email = document.querySelector("#email");
+const input__desc = document.querySelector("#description");
+
+const formField = ["title", "image", "composer", "email", "description"];
+
+btnArticleAdd.onclick = function (e) {
+  e.preventDefault();
+
+  let articleData = {
+    composer: "",
+    description: "",
+    email: "",
+    image: "",
+    title: "",
+  };
+
+  if (validate(articleData)) {
+    itemsArticle.unshift(articleData);
+
+    localStorage.setItem("article__storage", JSON.stringify(itemsArticle));
+    render();
+
+    clearInput();
+  }
+};
+
+// clear input
+
+function clearInput() {
+  input__title.value = "";
+  input__img.value = "";
+  input__composer.value = "";
+  input__email.value = "";
+  input__desc.value = "";
+}
+
+// Validate form
+
+function validate(articleData) {
+  let isError = true;
+  for (let field of formField) {
+    let element = document.getElementById(field);
+    console.log(element);
+    const regEmail = /^\w+@(\w+\.\w+){1,2}$/;
+    const regImg =
+      /^https?:\/\/(.+\/)+.+(\.(gif|png|jpg|jpeg|webp|svg|psd|bmp|tif))$/;
+    if (field == "title") {
+      if (element.value.trim().length < 10) {
+        element.parentElement.classList.add("red");
+        element.parentElement.querySelector(".errror").innerText =
+          "Title phải lớn hơn 10 kí tự";
+        isError = false;
+      }
+    }
+
+    if (field == "image") {
+      if (regImg.test(element.value.trim()) == false) {
+        element.parentElement.classList.add("red");
+        element.parentElement.querySelector(".errror").innerText =
+          "Đường dẫn ảnh không hợp lệ";
+        isError = false;
+      }
+    }
+
+    if (field == "email") {
+      if (regEmail.test(element.value.trim()) == false) {
+        element.parentElement.classList.add("red");
+        element.parentElement.querySelector(".errror").innerText =
+          "Email sai định dạng";
+        isError = false;
+      }
+    }
+
+    if (field == "description") {
+      if (element.value.trim().length < 20) {
+        element.parentElement.classList.add("red");
+        element.parentElement.querySelector(".errror").innerText =
+          "Description phải lớn hơn 20 kí tự";
+        console.log("lan chay tiep theo");
+        isError = false;
+      }
+    }
+
+    if (element.value.trim() === "") {
+      element.parentElement.classList.add("red");
+      element.parentElement.querySelector(
+        ".errror"
+      ).innerText = `Vui lòng nhập ${
+        element.parentElement.querySelector("label").innerText
+      }`;
+      isError = false;
+    }
+
+    element.oninput = () => {
+      element.parentElement.classList.remove("red");
+    };
+    if (isError) {
+      articleData[field] = element.value;
+    }
+  }
+
+  if (Object.values(articleData).includes("")) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// end create new article
+
+// view-countArticle
+
+const viewcountArticle = document.querySelector(".view-more");
+
+viewcountArticle.onclick = () => {
+  countArticle += 3;
+  render(countArticle);
 };
 
 // GOtoTop
@@ -123,3 +327,4 @@ darkTheme.onclick = function () {
   document.querySelector(".header").style.backgroundColor = "#fff";
   document.querySelector("header").style.backgroundColor = "#fff";
 };
+// end toggleTheme

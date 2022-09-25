@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./assets/lib/owl/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/lib/owl/owl.theme.default.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/article.css">
     <link rel="stylesheet" href="./assets/css/mobile.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css" />
   </head>
@@ -170,7 +171,7 @@
             <div class="row alcent">
               <div class="col l-6 m-12">
                 <div class="trending__img">
-                  <img src="./assets/imgs/banner1.png" alt="" />
+                  <img src="https://i.ytimg.com/vi/x0fSBAgBrOQ/maxresdefault.jpg" alt="" />
                 </div>
               </div>
               <div class="col l-6 m-12">
@@ -213,7 +214,7 @@
             <div class="row alcent">
               <div class="col l-6 m-12">
                 <div class="trending__img">
-                  <img src="./assets/imgs/banner1.png" alt="" />
+                  <img src="https://itechnolabs.ca/wp-content/uploads/2022/07/nextjs-vs-reactjs-which-framework-is-better-for-web-development-itechnolabs.jpg" alt="" />
                 </div>
               </div>
               <div class="col l-6 m-12">
@@ -255,18 +256,22 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col l-12 m-12">
-              <div class="breakNews">
-                <button>
-                  <a href="https://github.com/TuanAnh1210">Breaking News</a>
-                </button>
-                <h4>Kanye West says he's running for president in 2020.</h4>
-              </div>
+          
+        </div>
+      </div>
+
+   <div class="grid wide">
+        <div class="row">
+          <div class="col l-12 m-12 c-12">
+            <div class="breakNews">
+              <button>
+                <a href="https://github.com/TuanAnh1210">Breaking News</a>
+              </button>
+              <h4>Kanye West says he's running for president in 2020.</h4>
             </div>
           </div>
         </div>
-      </div>
+   </div>
 
       <div class="article">
         <div class="grid wide">
@@ -383,6 +388,60 @@
       </footer>
      
     </div>
+
+    <div class="modal__article-wrapper">
+      <div class="modal__article">
+        <div class="modal__article--form">
+          <h3>Create new article</h3>
+          <form>
+            <div class="form__group">
+              <div class="form__group-header">
+                <label>Title</label>
+                <p class="errror"></p>
+              </div>
+              <input id="title" class="input-text" type="text">
+            </div>
+            <div class="form__group">
+              <div class="form__group-header">
+                <label>Image</label> 
+                <p class="errror"></p>
+              
+              </div>
+              <input id="image" class="input-text" type="text">
+            </div>
+            <div class="form__group">
+              <div class="form__group-header">
+                <label>Composer</label>
+                <p class="errror"></p>
+
+              </div>
+              <input id="composer" class="input-text" type="text">
+            </div>
+            <div class="form__group">
+              <div class="form__group-header">
+                <label>Email</label>
+                <p class="errror"></p>
+
+              </div>
+              <input id="email" class="input-text" type="text">
+            </div>
+            <div class="form__group">
+              <div class="form__group-header">
+                <label>Description</label>
+                <p class="errror"></p>
+
+              </div>
+              <textarea  class="input-text" id="description" cols="30" rows="6"></textarea>
+            </div>
+
+            <div class="btn__article">
+              <button class="btn__article-close">Đóng</button>
+              <button class="btn__article-add"> Tạo mới</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>  
 
     <div class="modal">
       <div class="modal__container">

@@ -10,6 +10,7 @@
 
     .trending {
         padding: 72px 16px 0 16px;
+        margin-top: 0;
     }
 
     .breakNews {
@@ -42,9 +43,8 @@
     }
 
     .article__item {
-        width: 90%;
         margin: 16px auto;
-
+        padding: 0 18px 0 16px;
     }
 
     .trending__sub--author {
@@ -81,6 +81,10 @@
         font-size: 14px;
         line-height: 20px;
     }
+
+    .modal__article {
+        width: 360px;
+    }
 }
 
 /* tablet */
@@ -101,6 +105,10 @@
 
     .header__actions p {
         padding-left: 0;
+    }
+
+    .modal__article {
+        width: 720px;
     }
 }
 
