@@ -85,6 +85,11 @@
     .modal__article {
         width: 360px;
     }
+
+    .message__delete {
+        width: 100%;
+        right: 0;
+    }
 }
 
 /* tablet */

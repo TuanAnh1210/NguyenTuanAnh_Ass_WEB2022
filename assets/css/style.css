@@ -424,6 +424,7 @@ header {
 
 .article__actions {
     display: flex;
+    align-items: center;
     padding: 22px;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
@@ -436,10 +437,17 @@ header {
 
 .viewmore__wrapper {
     display: flex;
+    justify-content: center;
 }
 
+.btn-hide {
+    display: none;
+}
+
+.view-less,
 .view-more {
-    margin: 32px auto 0 auto;
+    margin-left: 12px;
+    margin-top: 32px;
     padding: 10px 22px;
     font-size: 16px;
     font-weight: 500;

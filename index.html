@@ -18,13 +18,22 @@
     <link rel="stylesheet" href="./assets/css/mobile.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css" />
   </head>
-  <body>
+  <body onload="render()">
     <div class="main">
       <div class="goToTop">
         
         <span>Top</span>
         <span class="ti-angle-double-up"></span>
 
+    </div>
+
+    <div class="message__delete">
+      <h2>Bạn chắc chắn muốn xóa !</h2>
+      <h4>Nếu xóa dữ liệu sẽ không thể khôi phục</h4>
+      <div class="btn__delete-container">
+        <button class="yes">Yes</button>
+        <button class="no">NO</button>
+      </div>
     </div>
 
     <div class="toggleTheme">
@@ -291,6 +300,7 @@
               <div class="row list__render"></div>
               <div class="viewmore__wrapper">
                 <button class="view-more">View More</button>
+                <button class="view-more btn-hide">Ẩn bớt</button>
               </div>
             </div>
           </div>
@@ -734,7 +744,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="module" src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/search.js"></script>
     <script src="./assets/lib/owl/owl.carousel.min.js"></script>
     <script>
