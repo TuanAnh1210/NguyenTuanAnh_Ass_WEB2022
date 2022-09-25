@@ -24,7 +24,7 @@ function render(more) {
       .map(
         (item) => ` 
   
-    <div class="col l-4 m-6">
+    <div class="col l-4 m-6 c-12">
       <div class="article__item">
         <a href="#">
           <div class="article__item--img">

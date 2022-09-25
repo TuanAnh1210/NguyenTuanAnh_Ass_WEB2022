@@ -60,7 +60,7 @@ html *::-webkit-scrollbar-track {
 
 /* toggleTheme */
 .toggleTheme {
-    width: 1200px;
+    max-width: 1200px;
     margin: 102px auto 0 auto;
     display: flex;
     justify-content: end;
