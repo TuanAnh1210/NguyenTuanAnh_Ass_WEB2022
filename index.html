@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="./assets/fonts/themify-icons/themify-icons.css"
     />
+    <link rel="stylesheet" href="./assets/lib/aos/aos.css">
     <link rel="stylesheet" href="./assets/css/grid.css" />
     <link rel="stylesheet" href="./assets/lib/owl/owl.carousel.min.css" />
     <link rel="stylesheet" href="./assets/lib/owl/owl.theme.default.min.css" />
@@ -131,7 +132,7 @@
         </div>
       </div>
       <!-- end header--tablet and mobile -->
-      <div class="trending">
+      <div  data-aos-duration="2000" data-aos="zoom-out" class="trending">
         <div class="grid wide">
           <div class="owl-carousel owl-theme">
             <div class="row alcent">
@@ -269,7 +270,8 @@
         </div>
       </div>
 
-   <div class="grid wide">
+   <div data-aos="fade-up"
+   data-aos-duration="3000" class="grid wide">
         <div class="row">
           <div class="col l-12 m-12 c-12">
             <div class="breakNews">
@@ -282,7 +284,7 @@
         </div>
    </div>
 
-      <div class="article">
+      <div  class="article">
         <div class="grid wide">
           <div class="article__header">
             <div class="article__header--options">
@@ -297,7 +299,7 @@
 
           <div class="article__lists">
             <div class="grid wide">
-              <div class="row list__render"></div>
+              <div  data-aos-duration="2000" data-aos="zoom-out" class="row list__render"></div>
               <div class="viewmore__wrapper">
                 <button class="view-more">View More</button>
                 <button class="view-more btn-hide">Ẩn bớt</button>
@@ -306,7 +308,7 @@
           </div>
         </div>
       </div>
-      <div class="suggest">
+      <div  data-aos-duration="2000" data-aos="zoom-out" class="suggest">
         <div class="grid wide">
           <h3 class="editor">Editor’s Picks</h3>
           <div class="row">
@@ -747,6 +749,7 @@
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/search.js"></script>
     <script src="./assets/lib/owl/owl.carousel.min.js"></script>
+    <script src="./assets/lib/aos/aos.js"></script>
     <script>
       $(document).ready(function () {
         $(".owl-carousel").owlCarousel();
@@ -772,6 +775,9 @@
       });
     </script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.9.0/jquery.mark.min.js" integrity="sha256-jcYvou95wtQNBJhqUWTA7Xv+A9ZPumT5e9nwTEmCzJs=" crossorigin="anonymous"></script>
+    <script>
+      AOS.init();
+    </script>
     <script>
       let test__text = document.querySelector('#searchInput')
 
