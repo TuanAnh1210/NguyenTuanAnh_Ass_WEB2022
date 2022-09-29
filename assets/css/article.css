@@ -269,3 +269,46 @@
         opacity: 1;
     }
 }
+
+
+
+.map__container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 440px;
+    z-index: 10;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 4px rgba(146, 146, 146, 0.5);
+    box-shadow: 0 1px 4px rgba(146, 146, 146, 0.5);
+    -webkit-transform: translateX(-110%);
+    transform: translateX(-110%);
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
+}
+
+.map__container .map__container--icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.map__container .map__container--icon i {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.map__container .map__container--icon :hover {
+    color: #3fd0d4;
+}
+
+.map__container .map__container--img {
+    text-align: center;
+    margin: 50px 0;
+}

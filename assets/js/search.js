@@ -89,3 +89,24 @@ loadMore.onclick = function () {
   }
   count += 2;
 };
+
+// map
+const mapIcons = document.querySelectorAll(".map-icon");
+const map__container = document.querySelector(".map__container");
+const mapClose = document.querySelector(".ti-close");
+mapIcons[0].onclick = () => {
+  Object.assign(map__container.style, {
+    transform: "translateX(0%)",
+  });
+};
+mapIcons[1].onclick = () => {
+  Object.assign(map__container.style, {
+    transform: "translateX(0%)",
+  });
+};
+
+mapClose.onclick = () => {
+  Object.assign(map__container.style, {
+    transform: "translateX(-110%)",
+  });
+};

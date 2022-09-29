@@ -1,5 +1,17 @@
 /* mobile */
 @media (max-width: 739px) {
+    .map__container {
+        width: 100%;
+    }
+
+    .trending__sub--title h3 {
+        font-size: 20px;
+    }
+
+    .trending__sub--title p {
+        font-size: 14px;
+    }
+
     .header {
         display: flex;
     }
@@ -114,6 +126,28 @@
 
     .modal__article {
         width: 720px;
+    }
+
+    .suggest__card {
+        margin-top: 22px;
+    }
+
+    .footer__text {
+        letter-spacing: 0;
+        font-size: 14px;
+        margin-right: 36px !important;
+    }
+
+    .footer__nav {
+        display: flex;
+    }
+
+    .footer__nav a {
+        font-size: 14px;
+    }
+
+    .footer__icon a {
+        font-size: 22px;
     }
 }
 
