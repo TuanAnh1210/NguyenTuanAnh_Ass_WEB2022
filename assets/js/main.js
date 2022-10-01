@@ -457,9 +457,9 @@ function deleteAr(index) {
 }
 
 // bookmark
-const arrTest = JSON.parse(localStorage.getItem("bookmark-list"))
-  ? JSON.parse(localStorage.getItem("bookmark-list"))
-  : [];
+// const arrTest = JSON.parse(localStorage.getItem("bookmark-list"))
+//   ? JSON.parse(localStorage.getItem("bookmark-list"))
+//   : [];
 
 const counter = document.querySelector(".counter");
 
@@ -473,16 +473,32 @@ const saveBookmark = (index) => {
     ? JSON.parse(localStorage.getItem("article__storage"))
     : itemsArticle;
 
-  let bookmark = articleItem[articleIndex]["bookmark"];
-  if (bookmark === undefined) {
-    articleItem[articleIndex] = {
-      ...articleItem[articleIndex],
-      ...{ bookmark: true },
-    };
+  const item = articleItem[index];
+  if (isBookmark(item)) {
+    let temp2 = JSON.parse(localStorage.getItem("bookmark-list"));
+    const newListBookmark = temp2.filter((obj) => obj.id != item.id);
+    console.log(newListBookmark);
+    localStorage.setItem("bookmark-list", JSON.stringify(newListBookmark));
+
+    counter.innerText = JSON.parse(
+      localStorage.getItem("bookmark-list")
+    ).length;
   } else {
-    articleItem[articleIndex].bookmark
-      ? (articleItem[articleIndex].bookmark = false)
-      : (articleItem[articleIndex].bookmark = true);
+    const arrTest = JSON.parse(localStorage.getItem("bookmark-list"))
+      ? JSON.parse(localStorage.getItem("bookmark-list"))
+      : [];
+    arrTest.push(item);
+    localStorage.setItem("bookmark-list", JSON.stringify(arrTest));
+    counter.innerText = JSON.parse(
+      localStorage.getItem("bookmark-list")
+    ).length;
   }
 
+  function isBookmark(item) {
+    let tempStorage = JSON.parse(localStorage.getItem("bookmark-list"))
+      ? JSON.parse(localStorage.getItem("bookmark-list"))
+      : [];
+
+    return tempStorage.some((obj) => obj.id == item.id);
+  }
 };
