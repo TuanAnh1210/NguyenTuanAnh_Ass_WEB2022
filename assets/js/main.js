@@ -142,9 +142,9 @@ function render() {
       </a>
       <div class="article__actions">
             <div>
-              <span>
-                <i class="ti-heart"></i>
-              </span>
+                <button class="like-btn article-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
               <span> 28 </span>
             </div>
             <div>
@@ -154,9 +154,9 @@ function render() {
               <span> 28 </span>
             </div>
             <div>
-              <span>
-                <i class="ti-bookmark"></i>
-              </span>
+              <button class="article-btn bookmark-btn" onclick='saveBookmark(${index})'>
+                <i class="fa-regular fa-bookmark"></i>
+              </button>
             </div>
         <div class="delete__wrapper">
           <button class="btn-delete" onclick='deleteAr(${index})'>Delete</button>
@@ -197,9 +197,9 @@ function render() {
           </a>
           <div class="article__actions">
                 <div>
-                  <span>
-                    <i class="ti-heart"></i>
-                  </span>
+                  <button class="like-btn article-btn">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
                   <span> 28 </span>
                 </div>
                 <div>
@@ -209,9 +209,9 @@ function render() {
                   <span> 28 </span>
                 </div>
                 <div>
-                  <span>
-                    <i class="ti-bookmark"></i>
-                  </span>
+                <button class="article-btn bookmark-btn"  onclick='saveBookmark(${index})'>
+                  <i class="fa-regular fa-bookmark"></i>
+                </button>
                 </div>
             <div class="delete__wrapper">
               <button class="btn-delete" onclick='deleteAr(${index})'>Delete</button>
@@ -455,3 +455,34 @@ function deleteAr(index) {
     message__delete.classList.remove("open");
   };
 }
+
+// bookmark
+const arrTest = JSON.parse(localStorage.getItem("bookmark-list"))
+  ? JSON.parse(localStorage.getItem("bookmark-list"))
+  : [];
+
+const counter = document.querySelector(".counter");
+
+counter.innerText = JSON.parse(localStorage.getItem("bookmark-list"))
+  ? JSON.parse(localStorage.getItem("bookmark-list")).length
+  : 0;
+
+const saveBookmark = (index) => {
+  let articleIndex = index;
+  let articleItem = JSON.parse(localStorage.getItem("article__storage"))
+    ? JSON.parse(localStorage.getItem("article__storage"))
+    : itemsArticle;
+
+  let bookmark = articleItem[articleIndex]["bookmark"];
+  if (bookmark === undefined) {
+    articleItem[articleIndex] = {
+      ...articleItem[articleIndex],
+      ...{ bookmark: true },
+    };
+  } else {
+    articleItem[articleIndex].bookmark
+      ? (articleItem[articleIndex].bookmark = false)
+      : (articleItem[articleIndex].bookmark = true);
+  }
+
+};

@@ -312,3 +312,29 @@
     text-align: center;
     margin: 50px 0;
 }
+
+.article-btn,
+.btn-user {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn-user {
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    top: -12px;
+    right: -18px;
+    font-size: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+    padding: 2px;
+    min-width: 20px;
+    text-align: center;
+    color: rgb(238, 70, 70);
+    font-weight: 600;
+}
