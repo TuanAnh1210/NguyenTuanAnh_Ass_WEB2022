@@ -321,6 +321,16 @@
     cursor: pointer;
 }
 
+.bookmark-btn {
+    display: flex;
+    align-items: center;
+}
+
+.bookmark-btn:hover {
+    /* color: rgb(238, 70, 70); */
+    color: rgb(157, 157, 6);
+}
+
 .btn-user {
     position: relative;
 }

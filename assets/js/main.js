@@ -156,6 +156,7 @@ function render() {
             <div>
               <button class="article-btn bookmark-btn" onclick='saveBookmark(${index})'>
                 <i class="fa-regular fa-bookmark"></i>
+                <span>Xem Sau</span>
               </button>
             </div>
         <div class="delete__wrapper">
@@ -211,6 +212,8 @@ function render() {
                 <div>
                 <button class="article-btn bookmark-btn"  onclick='saveBookmark(${index})'>
                   <i class="fa-regular fa-bookmark"></i>
+                <span>Xem Sau</span>
+
                 </button>
                 </div>
             <div class="delete__wrapper">
